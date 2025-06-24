@@ -110,8 +110,8 @@ class block_lesson_remaining_time extends block_base {
             data-start-time='$start_time'>
          </div>
       " . ($display_progress_bar ? "<div class='progress'><div>&nbsp;</div></div>" : "");
-      $this->page->requires->js('/blocks/lesson_remaining_time/js/lesson_remaining_time.js');
-      $this->page->requires->css('/blocks/lesson_remaining_time/css/lesson_remaining_time.css');
+      $this->page->requires->js('/blocks/lesson_remaining_time/js/lesson_remaining_time.js?%%version%%');
+      $this->page->requires->css('/blocks/lesson_remaining_time/css/lesson_remaining_time.css?%%version%%');
 
       return $this->content;
    }
