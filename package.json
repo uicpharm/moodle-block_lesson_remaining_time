@@ -1,0 +1,47 @@
+{
+   "name": "moodle-block_lesson_remaining_time",
+   "version": "1.0.0",
+   "description": "Moodle block that displays the remaining required time in a lesson.",
+   "type": "module",
+   "scripts": {
+      "build": "npm run clean && npm run build:plugin && npm run build:docs",
+      "build:plugin": "gulp build",
+      "build:docs": "vitepress build docs",
+      "clean": "rimraf dist",
+      "dev": "concurrently 'npm run dev:plugin' 'npm run dev:docs'",
+      "dev:plugin": "gulp",
+      "dev:docs": "vitepress dev docs",
+      "test": "npm run check-node",
+      "standards": "npm run eslint && npm run stylelint && npm run yamllint && npm run markdownlint && npm run cspell && npm run commitlint",
+      "check-node": "check-node-version --node 20.12.2 --npm 10.5.0",
+      "commitlint": "commitlint --from 79f2c0cb",
+      "cspell": "cspell . --show-suggestions --no-progress",
+      "eslint": "eslint .",
+      "markdownlint": "markdownlint **/*.md",
+      "stylelint": "stylelint **/*.css **/*.scss",
+      "yamllint": "yamllint **/*.yml .*/**/*.yml --ignore={node_modules}"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+ssh://git@github.com/uicpharm/moodle-block_lesson_remaining_time.git"
+   },
+   "author": "Josh Curtiss <josh@curtiss.me>",
+   "license": "UNLICENSED",
+   "bugs": {
+      "url": "https://github.com/uicpharm/moodle-block_lesson_remaining_time/issues"
+   },
+   "homepage": "https://github.com/uicpharm/moodle-block_lesson_remaining_time#readme",
+   "devDependencies": {
+      "@uicpharm/standardization": "github:uicpharm/standardization#0.4.3",
+      "@uicpharm/vitepress-theme": "github:uicpharm/vitepress-theme#1.0.1",
+      "concurrently": "9.1.2",
+      "gulp": "5.0.1",
+      "gulp-clean-css": "4.3.0",
+      "gulp-rename": "2.0.0",
+      "gulp-replace": "1.1.4",
+      "gulp-terser": "2.1.0",
+      "gulp-zip": "6.1.0",
+      "merge-stream": "2.0.0",
+      "vite-plugin-static-copy": "3.0.2"
+   }
+}

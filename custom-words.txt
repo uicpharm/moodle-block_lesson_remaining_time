@@ -1,0 +1,15 @@
+addinstance
+blocksettings
+captype
+clonepermissionsfrom
+completiontimespent
+contextlevel
+editingteacher
+lessonid
+lessontime
+manageblocks
+mform
+pluginname
+riskbitmask
+softprops
+YYYYMMDDHH
