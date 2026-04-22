@@ -9,7 +9,7 @@ jobs:
    build:
       runs-on: ubuntu-latest
       steps:
-         - uses: actions/checkout@v4
+         - uses: actions/checkout@v6
          - name: Check version matches tag name
            run: |
                version=$(grep -Eo '^\s*\$plugin->version\s*=\s*[0-9]+' src/version.php | grep -Eo '[0-9]+')
@@ -20,14 +20,10 @@ jobs:
                else
                   echo "✅ Version match: $tag"
                fi
-         - uses: actions/setup-node@v4
-           with:
-               node-version-file: ".nvmrc"
-               cache: "npm"
-         - run: npm ci
+         - uses: uicpharm/workflows/actions/setup-and-install@v1
          - run: npm run build:plugin
          - name: Upload Release Asset
-           uses: softprops/action-gh-release@v2
+           uses: softprops/action-gh-release@v3
            with:
                files: "dist/package/*.zip"
            env:
